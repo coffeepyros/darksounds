@@ -1,0 +1,60 @@
+@import url(https://fonts.bunny.net/css?family=pirata-one:400|quintessential:400);
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+:root {
+    font-size: 22px;
+}
+body {
+    padding: 1rem;
+    background-color: #111;
+    color: #666;
+    font-family: "Quintessential", handwriting;
+}
+section {
+    border: 1px solid hsl(31, 10%, 20%);
+    margin-top: 0.67rem;
+    padding: 0.5rem 0.67rem 0.67rem 0.67rem;
+    border-radius: 0.5rem;
+}
+h1,
+h2 {
+    font-family: "Pirata One", display;
+    font-weight: 400;
+}
+h1 {
+    color: #886644;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1;
+}
+#candles {
+    margin: 1rem 0;
+}
+h2 {
+    font-size: 1.67rem;
+    color: #84796d;
+}
+.center {
+    text-align: center;
+}
+ul {
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+    width: 480px;
+    flex-grow: 1;
+}
+a {
+    color: #dbccff;
+    text-decoration: none;
+    border-bottom: 1px solid #dbccff;
+}
+a:hover {
+    background-color: #dbccff22;
+}
