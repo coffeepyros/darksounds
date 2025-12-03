@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Remembering Micha/:DARK SOUNDS:</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <a id="water" href="">The Same Deep Water As Me #2</a> |
+            <a id="wgt" href="">WGT MB</a>
+        </header>
+        <main>
+            Playlists are generated after clicking one of the links above
+
+            <table></table>
+        </main>
+
+        <script>
+            // HTML ELEMENTS
+            const wgt_button = document.getElementById("wgt");
+            const water_button = document.getElementById("water");
+            const table = document.querySelector("table");
+
+            const load = async (e, file) => {
+                e.preventDefault();
+                table.innerHTML = "";
+                const response = await fetch(file);
+                const data = await response.text();
+                const dataArray = data.split("\n");
+                console.log(dataArray);
+
+                dataArray.forEach((row) => {
+                    const tr = document.createElement("tr");
+                    const rowValues = row.split(",");
+                    for (let i = 0; i < 3; i++) {
+                        tr.innerHTML += `<td>${rowValues[i].replaceAll(
+                            '"',
+                            ""
+                        )}</td>`;
+                    }
+                    table.append(tr);
+                });
+            };
+
+            // EVENTS
+            wgt_button.addEventListener(
+                "click",
+                async (e) => await load(e, "./WGT_MB.csv")
+            );
+            water_button.addEventListener(
+                "click",
+                async (e) => await load(e, "./The_Same_Deep_Water_As_Me_2.csv")
+            );
+        </script>
+    </body>
+</html>
